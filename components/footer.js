@@ -3,15 +3,14 @@ import React from "react";
 import Container from "./container";
 
 export default function Footer() {
-  const navigation = ["Product", "Features", "Pricing", "Company", "Blog"];
-  const legal = ["Terms", "Privacy", "Legal"];
   return (
     <div className="relative">
       <Container>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-5">
-          <div className="lg:col-span-2">
+        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 md:grid-cols-3">
+          
+          {/* Primeira Coluna - Sobre a Empresa */}
+          <div className="space-y-4">
             <div>
-              {"    "}
               <Link href="#!" className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
                 <span>
                   <img
@@ -25,63 +24,65 @@ export default function Footer() {
                 <span>Desenvolve</span>
               </Link>
             </div>
-
-            <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
+            <div className="text-gray-500 dark:text-gray-400">
               Transformamos a saúde pública brasileira através de consultoria especializada, 
               tecnologia inovadora e educação continuada para gestores e profissionais do SUS.
             </div>
           </div>
 
-          <div>
-            <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-              {navigation.map((item, index) => (
-                <Link key={index} href="#!" className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
-                  {item}
-                </Link>
-              ))}
+          {/* Segunda Coluna - Endereço */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Endereço</h3>
+            <div className="text-gray-500 dark:text-gray-400">
+              <p>Rua Gen. Augusto Soares dos Santos, 100</p>
+              <p>Parque Industrial Lagoinha</p>
+              <p>Ribeirão Preto - SP</p>
             </div>
           </div>
-          <div>
-            <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-              {legal.map((item, index) => (
-                <Link key={index} href="#!" className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
-                  {item}
-                </Link>
-              ))}
+
+          {/* Terceira Coluna - Contato */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Contato</h3>
+            <div className="space-y-2 text-gray-500 dark:text-gray-400">
+              <p>contato@desenvolve.com.br</p>
+              <p>(16) 99999-9999</p>
             </div>
-          </div>
-          <div className="">
-            <div>Follow us</div>
-            <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
+            <div className="flex space-x-4 text-gray-400 dark:text-gray-500">
               <a
                 href="#!"
-                rel="noopener">
-                <span className="sr-only">Twitter</span>
-                <Twitter />
-              </a>
-              <a
-                href="#!"
-                rel="noopener">
-                <span className="sr-only">Facebook</span>
-                <Facebook />
-              </a>
-              <a
-                href="#!"
-                rel="noopener">
+                rel="noopener"
+                className="hover:text-indigo-500 transition-colors">
                 <span className="sr-only">Instagram</span>
                 <Instagram />
               </a>
-              <a href="#!"
-               rel="noopener">
-                <span className="sr-only">Linkedin</span>
+              <a 
+                href="#!"
+                rel="noopener"
+                className="hover:text-indigo-500 transition-colors">
+                <span className="sr-only">LinkedIn</span>
                 <Linkedin />
+              </a>
+              <a
+                href="#!"
+                rel="noopener"
+                className="hover:text-indigo-500 transition-colors">
+                <span className="sr-only">WhatsApp</span>
+                <WhatsApp />
+              </a>
+              <a
+                href="mailto:contato@desenvolve.com.br"
+                rel="noopener"
+                className="hover:text-indigo-500 transition-colors">
+                <span className="sr-only">Email</span>
+                <Email />
               </a>
             </div>
           </div>
+
         </div>
 
         <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">
-          Copyright © {new Date().getFullYear()}. Grupo Desenvolve. Todos os direitos reservados.
+          <p>Copyright © {new Date().getFullYear()}. Grupo Desenvolve. Todos os direitos reservados.</p>
         </div>
       </Container>
       {/* Do not remove this */}
@@ -89,27 +90,28 @@ export default function Footer() {
   );
 }
 
-const Twitter = ({ size = 24 }) => (
+const WhatsApp = ({ size = 24 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
     height={size}
     viewBox="0 0 24 24"
     fill="currentColor">
-    <path d="M24 4.37a9.6 9.6 0 0 1-2.83.8 5.04 5.04 0 0 0 2.17-2.8c-.95.58-2 1-3.13 1.22A4.86 4.86 0 0 0 16.61 2a4.99 4.99 0 0 0-4.79 6.2A13.87 13.87 0 0 1 1.67 2.92 5.12 5.12 0 0 0 3.2 9.67a4.82 4.82 0 0 1-2.23-.64v.07c0 2.44 1.7 4.48 3.95 4.95a4.84 4.84 0 0 1-2.22.08c.63 2.01 2.45 3.47 4.6 3.51A9.72 9.72 0 0 1 0 19.74 13.68 13.68 0 0 0 7.55 22c9.06 0 14-7.7 14-14.37v-.65c.96-.71 1.79-1.6 2.45-2.61z" />
+    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.5 7.11c0 .13-.01.26-.06.38-.18.53-.69 1.05-1.52 1.05-.39 0-.78-.07-1.11-.2-.23-.09-.43-.22-.56-.4-.24-.34-.73-1.45-.73-1.45s-.51-.29-.51-.29c-.26-.17-.43-.46-.43-.75 0-.39.23-.74.62-.74h.11c.19 0 .29.09.37.25.09.18.29.73.32.78.03.06.05.13.05.21 0 .09-.04.17-.12.23-.08.06-.17.04-.25-.02-.08-.06-.12-.15-.12-.24 0-.08.04-.15.11-.2.07-.05.16-.02.24.02.08.04.12.11.12.19 0 .26-.17.47-.4.52-.12.03-.25-.01-.35-.09-.1-.08-.15-.2-.13-.31.02-.11.11-.2.22-.22.11-.02.22.05.24.16.02.11-.05.22-.16.24-.32.06-.65-.13-.79-.43-.14-.3-.05-.66.21-.84.26-.18.6-.15.82.08.22.23.25.57.07.83-.09.13-.25.2-.4.15-.15-.05-.25-.2-.22-.35.03-.15.18-.25.33-.22s.25.18.22.33c-.03.15-.18.25-.33.22-.15-.03-.25-.18-.22-.33.03-.15.18-.25.33-.22z"/>
   </svg>
 );
 
-const Facebook = ({ size = 24 }) => (
+const Email = ({ size = 24 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
     height={size}
     viewBox="0 0 24 24"
     fill="currentColor">
-    <path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07" />
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
   </svg>
 );
+
 const Instagram = ({ size = 24 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -152,8 +154,6 @@ const Backlink = () => {
           fill="#F7FAFC"
         />
       </svg>
-
-      <span>Web3Templates</span>
     </a>
   );
 };
