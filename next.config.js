@@ -12,19 +12,10 @@
 //   },
 // };
 
-const isProd = process.env.NODE_ENV === 'production';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    assetPrefix: isProd ? '/desenvolve/' : '',
-    basePath: isProd ? '/desenvolve' : '',
     images: {
-        // Para desenvolvimento local, usar configuração padrão
-        // Para produção com next export, pode precisar de configuração especial
-        ...(isProd && {
-            loader: 'akamai',
-            path: '',
-        })
+        unoptimized: true,
     },
 };
 
